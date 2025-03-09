@@ -38,3 +38,18 @@ User2
 .then(() => console.log('User2 saved to database'))
 .catch(err => console.log(err));
 
+
+User.insertMany([
+  { name: 'Tom', age: 30,},
+  { name: 'Jerry', age: 35 },
+  { name: 'Mickey', age: 40 },
+])
+.then(() => console.log('Users saved to database'))
+
+User.find({ age: { $gte: 40 } })
+.then((res) => {
+   console.log(res);
+})
+.catch(err => {
+  console.log(err);
+});
