@@ -66,3 +66,13 @@ const bookschema = new mongoose.Schema({
     type: Number,
   },
 });
+
+const Book = mongoose.model('Book', bookschema);
+
+let book1 = new Book({
+  title: 'The Alchemist',
+  price: 500,
+  author: 'Paulo Coelho',
+});
+
+book1.save().then(() => console.log('Book1 saved to database'));
