@@ -53,3 +53,16 @@ User.find({ age: { $gte: 40 } })
 .catch(err => {
   console.log(err);
 });
+
+
+User.updateOne({ name: 'Tom' }, { age: 45 })
+.then(() => console.log('User updated'))
+
+const bookschema = new mongoose.Schema({
+  title: {
+    type: String,
+  },
+  price: {
+    type: Number,
+  },
+});
